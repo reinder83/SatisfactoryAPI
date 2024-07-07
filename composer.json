@@ -1,2 +1,43 @@
 {
+  "name": "reinder83/satisfactory-api",
+  "description": "API Client for Satisfactory dedicated servers",
+  "keywords": [
+    "API",
+    "client",
+    "Satisfactory",
+    "server",
+    "dedicated"
+  ],
+  "homepage": "https://github.com/reinder83/SatisfactoryAPI",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Reinder Reinders",
+      "email": "reinder.reinders@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "SatisfactoryAPI\\": "src/"
+    }
+  },
+  "config": {
+    "platform": {
+      "php": "8.0"
+    }
+  },
+  "require": {
+    "php": "^8.0",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.6",
+    "phpstan/phpstan": "*"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SatisfactoryAPI\\Tests\\": "tests/"
+    }
+  }
 }
