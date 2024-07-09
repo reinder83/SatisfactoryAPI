@@ -7,6 +7,8 @@ use Saloon\Http\Auth\TokenAuthenticator;
 use Saloon\Http\Connector;
 use Saloon\Http\PendingRequest;
 use SatisfactoryAPI\Requests\QueryServerState;
+use SatisfactoryAPI\Requests\RenameServer;
+use SatisfactoryAPI\Responses\QueryServerStateResponse;
 
 class Satisfactory extends Connector
 {
@@ -30,9 +32,14 @@ class Satisfactory extends Connector
         return 'https://' . $this->host . ':' . $this->port . '/api/v1';
     }
 
-    public function queryServerState()
+    public function queryServerState(): QueryServerStateResponse
     {
         return $this->send(new QueryServerState())->dtoOrFail();
+    }
+
+    public function renameServer(string $name): bool
+    {
+        return $this->send(new RenameServer($name))->status() === 204;
     }
 
     protected function defaultHeaders(): array
