@@ -8,3 +8,10 @@ It will need some additional tweaking once out, to get it running, for example w
 * [8:26](https://youtu.be/v8piXNQwcUw?t=506) Query Server State
 * [8:34](https://youtu.be/v8piXNQwcUw?t=514) Rename Server
 * [8:40](https://youtu.be/v8piXNQwcUw?t=520) Upload Save Game
+
+## Installation
+
+To install this package in your PHP project simply run:
+```
+composer require reinder83/satisfactory-api
+```
