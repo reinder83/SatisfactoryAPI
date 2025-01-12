@@ -18,24 +18,8 @@ class QueryServerState extends Request
         ];
     }
 
-    public function createDtoFromResponse(Response $response): ?QueryServerStateResponse
+    public function createDtoFromResponse(Response $response): QueryServerStateResponse
     {
-        $data = $response->json('data.serverGameState', []);
-        if (empty($data)) {
-            return null;
-        }
-
-        return new QueryServerStateResponse(
-            activeSessionName: $data['activeSessionName'],
-            connectedPlayerCount: $data['numConnectedPlayers'],
-            techTier: $data['techTier'],
-            activeSchematic: $data['activeSchematic'],
-            gamePhase: $data['gamePhase'],
-            isGameRunning: $data['isGameRunning'],
-            totalGameDuration: $data['totalGameDuration'],
-            isGamePaused: $data['isGamePaused'],
-            averageTickRate: $data['averageTickRate'],
-            autoLoadSessionName: $data['autoLoadSessionName'],
-        );
+        return QueryServerStateResponse::make($response->json('data.serverGameState'));
     }
 }
