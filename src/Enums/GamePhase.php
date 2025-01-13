@@ -10,6 +10,9 @@ enum GamePhase: string
     case ConstructionDock = "/Script/FactoryGame.FGGamePhase'/Game/FactoryGame/GamePhases/GP_Project_Assembly_Phase_2.GP_Project_Assembly_Phase_2'";
     case MainBody = "/Script/FactoryGame.FGGamePhase'/Game/FactoryGame/GamePhases/GP_Project_Assembly_Phase_3.GP_Project_Assembly_Phase_3'";
     case PropulsionSystems = "/Script/FactoryGame.FGGamePhase'/Game/FactoryGame/GamePhases/GP_Project_Assembly_Phase_4.GP_Project_Assembly_Phase_4'";
+    case Assembly = "/Script/FactoryGame.FGGamePhase'/Game/FactoryGame/GamePhases/GP_Project_Assembly_Phase_5.GP_Project_Assembly_Phase_5'";
+    case Launch = "/Script/FactoryGame.FGGamePhase'/Game/FactoryGame/GamePhases/GP_Project_Assembly_Phase_6.GP_Project_Assembly_Phase_6'";
+    case Completed = "/Script/FactoryGame.FGGamePhase'/Game/FactoryGame/GamePhases/GP_Project_Assembly_Phase_7.GP_Project_Assembly_Phase_7'";
 
     public function name(): string
     {
@@ -19,6 +22,9 @@ enum GamePhase: string
             static::ConstructionDock => 'Construction Dock',
             static::MainBody => 'Main Body',
             static::PropulsionSystems => 'Propulsion Systems',
+            static::Assembly => 'Assembly',
+            static::Launch => 'Launch',
+            static::Completed => 'Completed',
             default => 'Unknown'
         };
     }
@@ -30,6 +36,7 @@ enum GamePhase: string
             static::ConstructionDock => 2,
             static::MainBody => 3,
             static::PropulsionSystems => 4,
+            static::Assembly, static::Launch, static::Completed => 5,
             default => 0
         };
     }
